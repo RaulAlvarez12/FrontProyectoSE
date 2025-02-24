@@ -1,3 +1,6 @@
+const urlNgrok = 'https://d018-177-93-4-104.ngrok-free.app/chat';
+
+
 // Carousel functionality
 document.addEventListener('DOMContentLoaded', () => {
   const carousel = document.querySelector('.carousel');
@@ -113,7 +116,7 @@ async function sendMessage() {
 
   // Realiza la petición POST al backend.
   // Reemplaza la URL por la URL pública de ngrok si es necesario.
-  const response = await fetch('https://d018-177-93-4-104.ngrok-free.app/chat', {
+  const response = await fetch(urlNgrok, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
