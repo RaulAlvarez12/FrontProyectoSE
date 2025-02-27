@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendButton = document.getElementById('send-button');
   
     // URL del backend
-    const backendUrl = 'https://b5ed-201-202-14-98.ngrok-free.app/chat';
+    const backendUrl = 'https://d002-201-202-14-98.ngrok-free.app/chat';
   
     function generateUniqueUserId() {
       return 'user_' + Math.random().toString(36).substr(2, 9);
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createAssistantMessage(text) {
       const messageContainer = document.createElement('div');
       messageContainer.className = 'message received';
-      messageContainer.innerHTML = text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
+      messageContainer.innerHTML = text.replace(/(https?:\/\/[^\s]+)/g, '<a class="chat-link" href="$1" target="_blank">$1</a>');
       return messageContainer;
     }
   
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const messageContainer = document.createElement('div');
       messageContainer.className = 'message received';
       messageContainer.id = 'typing-indicator';
-      messageContainer.textContent = "Thinking...";
+      messageContainer.textContent = " Pensando...";
       return messageContainer;
     }
   
@@ -102,10 +102,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   
     chatInput.focus();
-  
-    setTimeout(() => {
-      chatMessages.appendChild(createAssistantMessage("¡Hola! ¿Cómo puedo ayudarte hoy?"));
-      scrollToBottom();
-    }, 500);
   });
   
