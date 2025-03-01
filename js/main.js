@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sendButton = document.getElementById('send-button');
 
   // URL del backend
-  const backendUrl = 'https://d540-177-93-4-104.ngrok-free.app/chat';
+  const backendUrl = 'https://d98f-2803-f340-105d-44c4-c966-cabe-35cd-8d40.ngrok-free.app/chat';
 
   function generateUniqueUserId() {
     return 'user_' + Math.random().toString(36).substr(2, 9);
